@@ -114,3 +114,64 @@ If you use our models, please cite the following papers:
 ## License
 
 The code of EmotiEffLib Python Library is released under the Apache-2.0 License. There is no limitation for both academic and commercial usage.
+
+# Video Emotion Recognition
+
+This script processes video files to detect and analyze emotions using the EmotiEffLib library.
+
+## Features
+
+- Processes video files and detects emotions in each frame
+- Supports both CSV and video output modes
+- Handles video rotation automatically
+- Provides detailed emotion statistics including logits and probabilities
+- Supports multiple emotion classes (Anger, Contempt, Disgust, Fear, Happiness, Neutral, Sadness, Surprise)
+
+## Requirements
+
+- Python 3.7+
+- OpenCV
+- NumPy
+- Pandas
+- PyTorch
+- EmotiEffLib
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Basic usage:
+```bash
+python process_video.py input_video.mp4 output.csv
+```
+
+With video output mode:
+```bash
+python process_video.py input_video.mp4 output.mp4 --mode video
+```
+
+### Arguments
+
+- `input_video`: Path to the input video file
+- `output_path`: Path to save the output file (CSV or video)
+- `--mode`: Output mode - 'csv' (default) or 'video'
+
+## Output Format
+
+### CSV Mode
+The output CSV file contains the following columns:
+- `frame`: Frame number
+- `timestamp`: Time in seconds
+- `predicted_emotion`: The emotion with highest probability
+- `logit_[emotion]`: Raw logit score for each emotion
+- `prob_[emotion]`: Probability score for each emotion
+
+### Video Mode
+The output video shows the predicted emotion and its probability overlaid on each frame.
+
+## License
+
+[Add your license information here]
