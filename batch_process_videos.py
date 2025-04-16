@@ -1,3 +1,45 @@
+"""
+Batch Video Emotion Processing Script
+
+This script recursively processes all video files (.MP4 and .MOV) in a given directory and its subdirectories,
+using the EmotiEffLib library to detect and analyze emotions. For each video file, it generates a CSV file
+containing emotion predictions with timestamps, logits, and probabilities for each emotion class.
+
+Features:
+- Recursively searches for .MP4 and .MOV files in input directory and subdirectories
+- Processes each video file using EmotiEffLib's emotion recognition
+- Generates CSV files with detailed emotion analysis
+- Preserves original video filenames in output
+- Provides progress updates and timing information
+- Handles errors gracefully
+
+Usage:
+    python batch_process_videos.py input_directory output_directory
+
+Arguments:
+    input_directory: Path to the directory containing video files
+    output_directory: Path where CSV output files will be saved
+
+Example:
+    python batch_process_videos.py ./videos ./emotion_results
+
+Output:
+    For each input video file, a CSV file is created containing:
+    - Frame number
+    - Timestamp
+    - Predicted emotion
+    - Logits and probabilities for each emotion class
+    - Statistics for each emotion's predictions
+
+Requirements:
+    - Python 3.6+
+    - OpenCV
+    - NumPy
+    - Pandas
+    - PyTorch
+    - EmotiEffLib
+"""
+
 import os
 import argparse
 from process_video import process_video
